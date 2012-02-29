@@ -2,9 +2,15 @@
 
 (function () {
   var channelOffset = 600000;
+  var hydnaurl;
   var startup;
   var panes;
 
+  if (typeof HYDNA_URL == "undefined") {
+    hydnaurl = "notifications.hydna.net/"
+  } else {
+    hydnaurl = HYDNA_URL + "/";
+  }
 
   panes = [
     document.getElementById("im"),
@@ -135,7 +141,7 @@
 
 
   function onerror (event) {
-    console.error(event.data);
+    console.error(event.message);
   }
 
 
@@ -165,8 +171,8 @@
   function setuppane (pane, id) {
     var urls = pane.getElementsByClassName("url");
     var realid = channelOffset + id;
-    var pushurl = HYDNA_URL + "api/send/" + realid;
-    var chanurl = HYDNA_URL + realid;
+    var pushurl = hydnaurl + "api/send/" + realid;
+    var chanurl = hydnaurl + realid;
     var channel;
 
     pane.addEventListener("click", onpaneclick, false);
@@ -174,7 +180,7 @@
     for (var i = 0; i < urls.length; i++) {
       urls[i].innerHTML = pushurl;
     }
-
+console.log(chanurl);
     channel = new HydnaChannel(chanurl, "r");
     channel.onopen = onopen;
     channel.onmessage = onmessage;
