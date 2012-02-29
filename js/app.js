@@ -46,7 +46,6 @@
     var current = parseInt(counter.innerHTML);
     current = isNaN(current) ? 0 : current;
     counter.innerHTML = ++current;
-    console.log(current);
     startshake(elem);
   }
 
@@ -102,13 +101,11 @@
 
   function onclose (event) {
     var realid = this.id - channelOffset;
-    console.log("close %s", this.id);
     panes[realid].className = "pane disabled";
   }
 
 
   function onmessage (event) {
-    console.log(event.data);
     var realid = this.id - channelOffset;
     var command;
     var arg;
@@ -152,7 +149,6 @@
     }
 
     if (/instructions/.test(this.className) == false) {
-      console.log("nopp");
       hideinstructions();
       this.className = "pane instructions";
       event.preventDefault();
@@ -180,7 +176,7 @@
     for (var i = 0; i < urls.length; i++) {
       urls[i].innerHTML = pushurl;
     }
-console.log(chanurl);
+
     channel = new HydnaChannel(chanurl, "r");
     channel.onopen = onopen;
     channel.onmessage = onmessage;
