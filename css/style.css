@@ -1,0 +1,297 @@
+@keyframes shake-effect {
+	0% { transform: translate(2px, 1px) rotate(0deg); }
+	10% { transform: translate(-1px, -2px) rotate(-1deg); }
+	20% { transform: translate(-3px, 0px) rotate(1deg); }
+	30% { transform: translate(0px, 2px) rotate(0deg); }
+	40% { transform: translate(1px, -1px) rotate(1deg); }
+	50% { transform: translate(-1px, 2px) rotate(-1deg); }
+	60% { transform: translate(-3px, 1px) rotate(0deg); }
+	70% { transform: translate(2px, 1px) rotate(-1deg); }
+	80% { transform: translate(-1px, -1px) rotate(1deg); }
+	90% { transform: translate(2px, 2px) rotate(0deg); }
+	100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
+@-webkit-keyframes shake-effect {
+	0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+	10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
+	20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); }
+	30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
+	40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
+	50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
+	60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+	70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
+	80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
+	90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
+	100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+@-moz-keyframes shake-effect {
+	0% { -moz-transform: translate(2px, 1px) rotate(0deg); }
+	10% { -moz-transform: translate(-1px, -2px) rotate(-1deg); }
+	20% { -moz-transform: translate(-3px, 0px) rotate(1deg); }
+	30% { -moz-transform: translate(0px, 2px) rotate(0deg); }
+	40% { -moz-transform: translate(1px, -1px) rotate(1deg); }
+	50% { -moz-transform: translate(-1px, 2px) rotate(-1deg); }
+	60% { -moz-transform: translate(-3px, 1px) rotate(0deg); }
+	70% { -moz-transform: translate(2px, 1px) rotate(-1deg); }
+	80% { -moz-transform: translate(-1px, -1px) rotate(1deg); }
+	90% { -moz-transform: translate(2px, 2px) rotate(0deg); }
+	100% { -moz-transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
+@-o-keyframes shake-effect {
+	0% { -o-transform: translate(2px, 1px) rotate(0deg); }
+	10% { -o-transform: translate(-1px, -2px) rotate(-1deg); }
+	20% { -o-transform: translate(-3px, 0px) rotate(1deg); }
+	30% { -o-transform: translate(0px, 2px) rotate(0deg); }
+	40% { -o-transform: translate(1px, -1px) rotate(1deg); }
+	50% { -o-transform: translate(-1px, 2px) rotate(-1deg); }
+	60% { -o-transform: translate(-3px, 1px) rotate(0deg); }
+	70% { -o-transform: translate(2px, 1px) rotate(-1deg); }
+	80% { -o-transform: translate(-1px, -1px) rotate(1deg); }
+	90% { -o-transform: translate(2px, 2px) rotate(0deg); }
+	100% { -o-transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
+@-o-keyframes shake-effect {
+	0% { -ms-transform: translate(2px, 1px) rotate(0deg); }
+	10% { -ms-transform: translate(-1px, -2px) rotate(-1deg); }
+	20% { -ms-transform: translate(-3px, 0px) rotate(1deg); }
+	30% { -ms-transform: translate(0px, 2px) rotate(0deg); }
+	40% { -ms-transform: translate(1px, -1px) rotate(1deg); }
+	50% { -ms-transform: translate(-1px, 2px) rotate(-1deg); }
+	60% { -ms-transform: translate(-3px, 1px) rotate(0deg); }
+	70% { -ms-transform: translate(2px, 1px) rotate(-1deg); }
+	80% { -ms-transform: translate(-1px, -1px) rotate(1deg); }
+	90% { -ms-transform: translate(2px, 2px) rotate(0deg); }
+	100% { -ms-transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
+body {
+
+  font-family: "Helvetica Neue", Arial, San-Serif;
+
+  background: #212121;
+  color: white;
+}
+
+
+#container {
+
+  position:absolute;
+
+  width: 890px;
+  height:280px;
+      
+  left:50%;
+  top:50%;
+
+  margin: -140px 0 0 -445px;
+
+  padding: 0;
+}
+
+
+.pane {
+
+  position: relative;
+
+  width: 280px;
+  height: 280px;
+
+  cursor: pointer;
+
+  float: left;
+
+  margin-right: 25px;
+
+  background-color: #4cc0eb;
+  background-position: center center;
+  background-repeat: no-repeat;
+} 
+
+
+.pane:last-child {
+  margin-right: 0;
+}
+
+
+.pane.disabled {
+  opacity: 0.5;
+}
+
+
+.pane .count {
+
+  position: absolute;
+
+  right: 10px;
+  top: 10px;
+
+  font-size: 2.0em;
+  font-weight: bold;
+}
+
+.pane .info {
+
+  position: absolute;
+
+  background: url(../images/info.png) no-repeat;
+
+  left: 10px;
+  top: 10px;
+
+  width: 26px;
+  height: 26px;
+
+  opacity: 0;
+
+  -webkit-transition: opacity ease-out 0.3s;
+
+}
+
+
+.pane:hover .info {
+
+  opacity: 1;
+
+}
+
+
+.pane.instructions {
+
+  cursor: auto;
+
+}
+
+.pane .instruction {
+  position: absolute;
+
+  display: none;
+
+  background: #444;
+
+  top: -30px;
+  right: -400px;
+  width: 350px;
+
+  font-size: 0.7em;
+
+  padding: 20px;
+
+  opacity: 0;
+
+  z-index: 5;
+
+  -webkit-transition: opacity ease-out 0.3s;
+}
+
+#phone.pane .instruction {
+  right: 290px;  
+}
+
+.pane.instructions .instruction {
+  display: block;
+  opacity: 1;
+}
+
+
+.pane.shake {
+  
+  animation-name: shake-effect;
+  animation-duration: 0.3s;
+  transform-origin:50% 50%;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+
+  -webkit-animation-name: shake-effect;
+  -webkit-animation-duration: 0.3s;
+  -webkit-transform-origin:50% 50%;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: linear;
+
+  -moz-animation-name: shake-effect;
+  -moz-animation-duration: 0.3s;
+  -moz-transform-origin:50% 50%;
+  -moz-animation-iteration-count: 1;
+  -moz-animation-timing-function: linear;
+
+  -o-animation-name: shake-effect;
+  -o-animation-duration: 0.3s;
+  -o-transform-origin:50% 50%;
+  -o-animation-iteration-count: 1;
+  -o-animation-timing-function: linear;
+
+  -ms-animation-name: shake-effect;
+  -ms-animation-duration: 0.3s;
+  -ms-transform-origin:50% 50%;
+  -ms-animation-iteration-count: 1;
+  -ms-animation-timing-function: linear;
+
+}
+
+
+#im {
+  background-image: url(../images/icon-im.png);
+}
+
+
+#mail {
+  background-image: url(../images/icon-mail.png);
+}
+
+
+#phone {
+  background-image: url(../images/icon-phone.png);
+}
+
+#startup-notification {
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 100px;
+
+  overflow: hidden;
+}
+
+#startup-notification .text {
+
+  position: absolute;
+
+  left: 50%;
+  bottom: 30px;
+
+  width: 600px;
+
+  font-size: 2.0em;
+  font-weight: bold;
+
+  text-align: center;
+
+  margin: 0 -300px;
+
+  -webkit-transition: bottom ease-out 0.7s;
+}
+
+
+#startup-notification.initial .text {
+
+  bottom: -120px;
+
+}
+
+
+#startup-notification.hidden .text {
+
+  bottom: -120px;
+  
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Hydna Notification Demo</title>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script type="text/javascript" src="http://cdn.hydna.com/1/hydna.js"></script>
+    <script>
+
+      //
+      //  Put in your Hydna-URL here to try on your own account. Rember
+      //  to put in the tailing '/'.
+      //
+      var HYDNA_URL = "localhost:7010/";
+
+
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <div id="im" class="pane disabled">
+        <span class="info"></span>
+        <span class="count"></span>
+        <div class="instruction">
+          <h2>Instant Messaging Notfication</h2>
+          <p>This is the Instant Messaging Notification icon. It keeps track of how many unread messages that is in queue.</p>
+          <h3>To increase the indicator:<h3>
+          <code>
+            $ curl --data "incr" <span class="url"></span> 
+          </code>
+          <h3>To decrease the indicator:<h3>
+          <code>
+            $ curl --data "decr" <span class="url"></span> 
+          </code>
+          <h3>To reset the indicator:<h3>
+          <code>
+            $ curl --data "reset" <span class="url"></span> 
+          </code>
+          <h3>To set the indicator to a specific value:<h3>
+          <code>
+            $ curl --data "set 15" <span class="url"></span> 
+          </code>
+        </div>
+      </div>
+      <div id="mail" class="pane disabled">
+        <span class="info"></span>
+        <span class="count"></span>
+        <div class="instruction">
+          <h2>Support Mail Notification</h2>
+          <p>This is the Support Mail Notification icon. It indicates how many unanswered emails there is in the queue.</p>
+          <h3>To increase the indicator:<h3>
+          <code>
+            $ curl --data "incr" <span class="url"></span> 
+          </code>
+          <h3>To decrease the indicator:<h3>
+          <code>
+            $ curl --data "decr" <span class="url"></span> 
+          </code>
+          <h3>To reset the indicator:<h3>
+          <code>
+            $ curl --data "reset" <span class="url"></span> 
+          </code>
+          <h3>To set the indicator to a specific value:<h3>
+          <code>
+            $ curl --data "set 15" <span class="url"></span> 
+          </code>
+        </div>
+      </div>
+      <div id="phone" class="pane disabled">
+        <span class="info"></span>
+        <span class="count"></span>
+        <div class="instruction">
+          <h2>Phone Call Notification</h2>
+          <p>This is the Phone Call Notification icon. It keeps track of how many phone calls that is currently waiting in line.</p>
+          <h3>To increase the indicator:<h3>
+          <code>
+            $ curl --data "incr" <span class="url"></span> 
+          </code>
+          <h3>To decrease the indicator:<h3>
+          <code>
+            $ curl --data "decr" <span class="url"></span> 
+          </code>
+          <h3>To reset the indicator:<h3>
+          <code>
+            $ curl --data "reset" <span class="url"></span> 
+          </code>
+          <h3>To set the indicator to a specific value:<h3>
+          <code>
+            $ curl --data "set 15" <span class="url"></span> 
+          </code>
+        </div>
+      </div>
+    </div>
+    <div id="startup-notification" class="initial">
+      <p class="text">
+        Click on the icons to get instructions in how to communicate with them
+      </p>
+    </div>
+    <script src="js/app.js"></script>
+  </body>
+</html>
