@@ -167,14 +167,13 @@
   function setuppane (pane, id) {
     var urls = pane.getElementsByClassName("url");
     var realid = channelOffset + id;
-    var pushurl = hydnaurl + "api/send/" + realid;
     var chanurl = hydnaurl + realid;
     var channel;
 
     pane.addEventListener("click", onpaneclick, false);
 
     for (var i = 0; i < urls.length; i++) {
-      urls[i].innerHTML = pushurl;
+      urls[i].innerHTML = chanurl;
     }
 
     channel = new HydnaChannel(chanurl, "r");
