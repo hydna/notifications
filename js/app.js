@@ -144,13 +144,13 @@
 
 
   function onpaneclick (event) {
+    hideinstructions();
 
     if (/disabled/.test(this.className)) {
       return;
     }
 
     if (/instructions/.test(this.className) == false) {
-      hideinstructions();
       this.className = "pane instructions";
       event.preventDefault();
       event.stopPropagation();
