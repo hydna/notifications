@@ -73,17 +73,13 @@
 
 
 body {
-
   font-family: "Helvetica Neue", Arial, San-Serif;
-
   background: #212121;
-  color: white;
-
+  color: #FFF;
 }
 
 
 #container {
-
   position:absolute;
 
   width: 890px;
@@ -99,7 +95,6 @@ body {
 
 
 .pane {
-
   position: relative;
 
   width: 280px;
@@ -128,18 +123,16 @@ body {
 
 
 .pane .count {
-
   position: absolute;
 
   right: 10px;
   top: 10px;
 
-  font-size: 2.0em;
+  font-size: 20px;
   font-weight: bold;
 }
 
 .pane .info {
-
   position: absolute;
 
   background: url(../images/info.png) no-repeat;
@@ -157,7 +150,6 @@ body {
   -moz-transition: opacity ease-out 0.3s;
   -ms-transition: opacity ease-out 0.3s;
   -o-transition: opacity ease-out 0.3s;
-
 }
 
 
@@ -172,8 +164,10 @@ body {
 
 
 .pane.instructions code {
-  font-size: 0.9em;
-  padding-left: 20px;
+  font-size: 12px;
+  padding: 5px;
+  background: #333;
+  color: #FFF;
 }
 
 
@@ -183,12 +177,14 @@ body {
   display: none;
 
   background: #444;
+  color: #CCC;
 
   top: -30px;
   right: -400px;
   width: 350px;
 
-  font-size: 0.7em;
+  font-size: 12px;
+  line-height: 150%;
 
   padding: 20px;
 
@@ -201,6 +197,11 @@ body {
   -moz-transition: opacity ease-out 0.3s;
   -ms-transition: opacity ease-out 0.3s;
   -o-transition: opacity ease-out 0.3s;
+}
+
+.pane .instruction h2,
+.pane .instruction h3 {
+    color: #EEE;
 }
 
 #phone.pane .instruction {
@@ -284,7 +285,7 @@ body {
 
   width: 600px;
 
-  font-size: 2.0em;
+  font-size: 20px;
   font-weight: bold;
 
   text-align: center;

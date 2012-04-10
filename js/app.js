@@ -1,5 +1,3 @@
-
-
 (function () {
   var channelOffset = 600000;
   var hydnaurl;

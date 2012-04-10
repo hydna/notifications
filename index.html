@@ -7,11 +7,9 @@
     <script type="text/javascript" src="http://cdn.hydna.com/1/hydna.js"></script>
     <script>
 
-      //
-      //  Put in your Hydna-URL here to try on your own domain. 
-      //
-      var HYDNA_URL = "test-1.hydna.net";
-
+      // You can insert your own domain here if you do not wish to play with
+      // others:
+      var HYDNA_URL = "public.hydna.net";
 
     </script>
   </head>
@@ -21,21 +19,21 @@
         <span class="info"></span>
         <span class="count"></span>
         <div class="instruction">
-          <h2>Instant Messaging Notfication</h2>
-          <p>This is the Instant Messaging Notification icon. It keeps track of how many unread messages that is in queue.</p>
-          <h3>To increase the indicator:<h3>
+          <h2>Message Notfication</h2>
+          <p>This is the Message Notification box; it keeps track of how many unread messages you have.</p>
+          <h3>To increase the counter:<h3>
           <code>
             $ curl --data "incr" <span class="url"></span> 
           </code>
-          <h3>To decrease the indicator:<h3>
+          <h3>To decrease the counter:<h3>
           <code>
             $ curl --data "decr" <span class="url"></span> 
           </code>
-          <h3>To reset the indicator:<h3>
+          <h3>To reset the counter:<h3>
           <code>
             $ curl --data "reset" <span class="url"></span> 
           </code>
-          <h3>To set the indicator to a specific value:<h3>
+          <h3>To set the counter to a specific value:<h3>
           <code>
             $ curl --data "set 15" <span class="url"></span> 
           </code>
@@ -46,20 +44,20 @@
         <span class="count"></span>
         <div class="instruction">
           <h2>Support Mail Notification</h2>
-          <p>This is the Support Mail Notification icon. It indicates how many unanswered emails there is in the queue.</p>
-          <h3>To increase the indicator:<h3>
+          <p>This is the Support Mail Notification box; it keeps track of the number of unanswered emails that have been queued up.</p>
+          <h3>To increase the counter:<h3>
           <code>
             $ curl -d "incr" <span class="url"></span> 
           </code>
-          <h3>To decrease the indicator:<h3>
+          <h3>To decrease the counter:<h3>
           <code>
             $ curl -d "decr" <span class="url"></span> 
           </code>
-          <h3>To reset the indicator:<h3>
+          <h3>To reset the counter:<h3>
           <code>
             $ curl -d "reset" <span class="url"></span> 
           </code>
-          <h3>To set the indicator to a specific value:<h3>
+          <h3>To set the counter to a specific value:<h3>
           <code>
             $ curl -d "set 15" <span class="url"></span> 
           </code>
@@ -70,7 +68,7 @@
         <span class="count"></span>
         <div class="instruction">
           <h2>Phone Call Notification</h2>
-          <p>This is the Phone Call Notification icon. It keeps track of how many phone calls that is currently waiting in line.</p>
+          <p>This is the Phone Call Notification box; it keeps track of the number of eager users there are waiting to for you to answer.</p>
           <h3>To increase the indicator:<h3>
           <code>
             $ curl -d "incr" <span class="url"></span> 
@@ -92,7 +90,7 @@
     </div>
     <div id="startup-notification" class="initial">
       <p class="text">
-        Click on the icons to get instructions in how to communicate with them
+        Click on the icons above to see instructions on how to communicate with them
       </p>
     </div>
     <script src="js/app.js"></script>
