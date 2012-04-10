@@ -1,5 +1,5 @@
 (function () {
-  var channelOffset = 600000;
+  var channelOffset;
   var hydnaurl;
   var startup;
   var panes;
@@ -16,6 +16,8 @@
     document.getElementById("phone")
   ];
 
+  // Get a random channel so that we get a unqiue experience
+  channelOffset = Math.floor(Math.random() * 0xFFFFF5) + 1;
 
   startup = document.getElementById("startup-notification");
   startup.className = "hidden";
