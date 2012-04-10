@@ -41,7 +41,7 @@
 
   function incr (elem) {
     var counter = getcounter(elem);
-    var current = parseInt(counter.innerHTML);
+    var current = parseInt(counter.innerHTML, 10);
     current = isNaN(current) ? 0 : current;
     counter.innerHTML = ++current;
     startshake(elem);
@@ -50,7 +50,7 @@
 
   function decr (elem) {
     var counter = getcounter(elem);
-    var current = parseInt(counter.innerHTML);
+    var current = parseInt(counter.innerHTML, 10);
     current = isNaN(current) ? 0 : current;
     counter.innerHTML = --current;
     if (counter.innerHTML == "0") {
@@ -62,8 +62,11 @@
 
   function set (elem, value) {
     var counter = getcounter(elem);
-    var current = parseInt(counter.innerHTML);
-    counter.innerHTML = parseInt(value);
+    if (isNaN(value)) {
+      counter.innerHTML = '';
+    } else {
+      counter.innerHTML = parseInt(value, 10);
+    }
     startshake(elem);
   }
 
