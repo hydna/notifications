@@ -12,7 +12,6 @@
 	100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
-
 @-webkit-keyframes shake-effect {
 	0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
 	10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
@@ -41,7 +40,6 @@
 	100% { -moz-transform: translate(1px, -2px) rotate(-1deg); }
 }
 
-
 @-o-keyframes shake-effect {
 	0% { -o-transform: translate(2px, 1px) rotate(0deg); }
 	10% { -o-transform: translate(-1px, -2px) rotate(-1deg); }
@@ -55,7 +53,6 @@
 	90% { -o-transform: translate(2px, 2px) rotate(0deg); }
 	100% { -o-transform: translate(1px, -2px) rotate(-1deg); }
 }
-
 
 @-o-keyframes shake-effect {
 	0% { -ms-transform: translate(2px, 1px) rotate(0deg); }
@@ -71,13 +68,11 @@
 	100% { -ms-transform: translate(1px, -2px) rotate(-1deg); }
 }
 
-
 body {
   font-family: "Helvetica Neue", Arial, San-Serif;
   background: #212121;
   color: #FFF;
 }
-
 
 #container {
   position:absolute;
@@ -92,7 +87,6 @@ body {
 
   padding: 0;
 }
-
 
 .pane {
   position: relative;
@@ -111,16 +105,13 @@ body {
   background-repeat: no-repeat;
 } 
 
-
 .pane:last-child {
   margin-right: 0;
 }
 
-
 .pane.disabled {
   opacity: 0.5;
 }
-
 
 .pane .count {
   position: absolute;
@@ -214,8 +205,7 @@ body {
 }
 
 
-.pane.shake {
-  
+.pane.shake {  
   animation-name: shake-effect;
   animation-duration: 0.3s;
   transform-origin:50% 50%;
@@ -245,7 +235,6 @@ body {
   -ms-transform-origin:50% 50%;
   -ms-animation-iteration-count: 1;
   -ms-animation-timing-function: linear;
-
 }
 
 
@@ -264,7 +253,6 @@ body {
 }
 
 #startup-notification {
-
   position: absolute;
 
   left: 0;
@@ -277,7 +265,6 @@ body {
 }
 
 #startup-notification .text {
-
   position: absolute;
 
   left: 50%;
@@ -297,14 +284,10 @@ body {
 
 
 #startup-notification.initial .text {
-
   bottom: -120px;
-
 }
 
 
 #startup-notification.hidden .text {
-
   bottom: -120px;
-  
 }
