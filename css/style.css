@@ -68,6 +68,10 @@
 	100% { -ms-transform: translate(1px, -2px) rotate(-1deg); }
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: "Helvetica Neue", Arial, San-Serif;
   background: #212121;
@@ -262,10 +266,15 @@ body {
   height: 100px;
 
   overflow: hidden;
+
+  pointer-events: none;
+  cursor: pointer;
 }
 
 #startup-notification .text {
   position: absolute;
+
+  background-color: rgba(0, 0, 0, .6);
 
   left: 50%;
   bottom: 30px;
@@ -279,6 +288,8 @@ body {
 
   margin: 0 -300px;
 
+  padding: 6px;
+
   -webkit-transition: bottom ease-out 0.7s;
 }
 
@@ -290,4 +301,16 @@ body {
 
 #startup-notification.hidden .text {
   bottom: -120px;
+}
+
+#mark {
+  position: absolute;
+
+  left: 50%;
+  width: 64px;
+  height: 58px;
+  bottom: 40px;
+
+  margin: 0 -32px;
+
 }
