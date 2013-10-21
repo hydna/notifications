@@ -11,7 +11,7 @@
 
   // Get a random channel so that we get a unqiue experience
   hydnaurl += String(~~(Math.random() * 0xFFF) + 1) + "/";
-  
+
   panes = {};
   panes[hydnaurl + "im"] = document.getElementById("im");
   panes[hydnaurl + "mail"] = document.getElementById("mail");
