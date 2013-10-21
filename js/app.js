@@ -96,8 +96,6 @@
 
   function onopen (event) {
     var url = stripProtocol(this.url);
-    console.log(url);
-    console.log(panes);
     panes[url].className = "pane";
   }
 
