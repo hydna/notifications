@@ -170,7 +170,7 @@
 
 
   function setuppane (pane, url) {
-    var urls = pane.getElementsByClassName("url");
+    var urls = pane.getElementsByTagName("i");
     var channel;
 
     pane.addEventListener("click", onpaneclick, false);
