@@ -1,5 +1,4 @@
 (function () {
-  var channelOffset;
   var hydnaurl;
   var startup;
   var panes;
@@ -10,14 +9,13 @@
     hydnaurl = HYDNA_URL + "/";
   }
 
-  panes = [
-    document.getElementById("im"),
-    document.getElementById("mail"),
-    document.getElementById("phone")
-  ];
-
   // Get a random channel so that we get a unqiue experience
-  channelOffset = Math.floor(Math.random() * 0xFFFFF5) + 1;
+  hydnaurl += String(~~(Math.random() * 0xFFF) + 1) + "/";
+  
+  panes = {};
+  panes[hydnaurl + "im"] = document.getElementById("im");
+  panes[hydnaurl + "mail"] = document.getElementById("mail");
+  panes[hydnaurl + "phone"] = document.getElementById("phone");
 
   startup = document.getElementById("startup-notification");
   startup.className = "hidden";
@@ -97,19 +95,21 @@
   }
 
   function onopen (event) {
-    var realid = this.id - channelOffset;
-    panes[realid].className = "pane";
+    var url = stripProtocol(this.url);
+    console.log(url);
+    console.log(panes);
+    panes[url].className = "pane";
   }
 
 
   function onclose (event) {
-    var realid = this.id - channelOffset;
-    panes[realid].className = "pane disabled";
+    var url = stripProtocol(this.url);
+    panes[url].className = "pane disabled";
   }
 
 
   function onmessage (event) {
-    var realid = this.id - channelOffset;
+    var url = stripProtocol(this.url);
     var command;
     var arg;
 
@@ -122,19 +122,19 @@
     switch (command) {
 
       case "incr":
-        incr(panes[realid]);
+        incr(panes[url]);
         break;
 
       case "decr":
-        decr(panes[realid]);
+        decr(panes[url]);
         break;
 
       case "reset":
-        reset(panes[realid]);
+        reset(panes[url]);
         break;
 
       case "set":
-        set(panes[realid], arg);
+        set(panes[url], arg);
         break;
     }
   }
@@ -159,37 +159,41 @@
     }
   }
 
+
   function hideinstructions () {
-    for (var i = 0; i < panes.length; i++) {
-      if (/instructions/.test(panes[i].className)) {
-        panes[i].className = "pane";
+    for (var url in panes) {
+      if (/instructions/.test(panes[url].className)) {
+        panes[url].className = "pane";
       }
     }
   }
 
-  function setuppane (pane, id) {
+
+  function setuppane (pane, url) {
     var urls = pane.getElementsByClassName("url");
-    var realid = channelOffset + id;
-    var chanurl = hydnaurl + realid;
     var channel;
 
     pane.addEventListener("click", onpaneclick, false);
 
     for (var i = 0; i < urls.length; i++) {
-      urls[i].innerHTML = chanurl;
+      urls[i].innerHTML = url;
     }
 
-    channel = new HydnaChannel(chanurl, "r");
+    channel = new HydnaChannel(url, "r");
     channel.onopen = onopen;
     channel.onmessage = onmessage;
     channel.onerror = onerror;
   }
 
 
-  for (var i = 0; i < panes.length; i++) {
-    setuppane(panes[i], i);
+  function stripProtocol (url) {
+    return url.replace(/^(http:\/\/|https:\/\/)/, '');
   }
 
+
+  for (var url in panes) {
+    setuppane(panes[url], url);
+  }
 
   window.addEventListener("click", hideinstructions, false);
 
